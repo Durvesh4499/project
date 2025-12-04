@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>Login Forms</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body ng-controller="Logincontroller">
+      <div class="form-container">
+        <h2>Login</h2>
+        <form name="loginform" ng-submit="login(loginform)" novalidate>
+        
+        <!--Username-->
+        <label>Username</label><br>
+        <input type="text" name="username" ng-model="user.username" required><br>
+        <span class="error"
+              ng-show="(loginform.username.$touched || submitted) && loginform.username.$error.required">
+            Username is required
+</span>
+<br><br> 
+<!--password-->
+<label>Password:</label><br>
+<input type="password" name="password" ng-model="usen.password" required ng-minlength="6"><br>
+<span class="error"
+      ng-show="(loginform.password.$touched || submitted)  && loginform.password.&error.rerquired">
+      password is must be least 6 character required.
+</span>
+<span class="error"
+  ng-show="(loginform.password.$touched || submitted) && loginform.password.$error"
+      <br><br>
+      <!--submit-->
+      <button type="submit" ng-disabled="loginform.&invalid">login</button>
+</form>  
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"</script>
+    <script src="app.js"</script>
+    </body>
+</html>
